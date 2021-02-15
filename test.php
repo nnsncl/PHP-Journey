@@ -1,2 +1,2 @@
 <?php
-    echo 'Test commit';
+    echo 'Foo';

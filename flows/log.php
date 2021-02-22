@@ -1,14 +1,14 @@
-<!-- Create a log file
+<!--
+Create a log file
 
 When a refresh occurs, add a new line in the log file.
 - Date and hour,
 - User IP Address,
 - User Browser
-
-++ Create a new file every day -->
+- Create a new file every day
+-->
 
 <?php
-// phpinfo();
 
 $file = date('d-m-y').'-log.txt';
 

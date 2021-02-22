@@ -1,6 +1,6 @@
 <?php
 
-$file = 'log.txt';
+$file = 'flux.txt';
 
 //r stands for Read Only
 // r+ stands for Read + Write

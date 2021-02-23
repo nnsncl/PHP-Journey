@@ -1,12 +1,12 @@
 <?php
 
 // Get Medias sizes
-list($background_w, $background_h) = getimagesize('images/'.$_POST['image']);
-list($thumbs_w, $thumbs_h) = getimagesize('images/'.$_POST['timbre']);
+list($background_w, $background_h) = getimagesize('images/' . $_POST['image']);
+list($thumbs_w, $thumbs_h) = getimagesize('images/' . $_POST['timbre']);
 
 // Get Medias
-$card_background = imagecreatefromjpeg('images/'.$_POST['image']);
-$thumb = imagecreatefrompng('images/'.$_POST['timbre']);
+$card_background = imagecreatefromjpeg('images/' . $_POST['image']);
+$thumb = imagecreatefrompng('images/' . $_POST['timbre']);
 
 // Set the Thumbs position
 $thumbs_x = $background_w - ($thumbs_w + 25);
@@ -17,7 +17,7 @@ $transparentArea_w = $background_w - 50;
 $transparentArea_h = $background_h * 0.33;
 
 $transparentArea_x = $background_w / 2 - $transparentArea_w / 2;
-$transparentArea_y = 3/5 * $background_h;
+$transparentArea_y = 3 / 5 * $background_h;
 
 // Create transparent area
 $transparent_area_ressource = imagecreate($transparentArea_w, $transparentArea_h);

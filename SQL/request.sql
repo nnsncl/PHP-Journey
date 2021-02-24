@@ -70,3 +70,5 @@ UPDATE membres SET ville = 'Los Angeles' WHERE ville = 'Los-Angeles'
 
 DELETE from membres --  Empty a table
 DELETE from membres WHERE id = 19 -- delete a row
+
+

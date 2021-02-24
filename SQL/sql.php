@@ -4,3 +4,19 @@ $db = new PDO('mysql:host=localhost;dbname=php-journey', 'root', 'root');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 $db->exec('SET CHARACTER SET utf8');
 
+$sql = 'SELECT * FROM membres';
+$req = $db->query($sql);
+$data = $req->fetchAll(PDO::FETCH_OBJ);
+
+foreach($data as $membre) {
+    echo $membre->prenom.' '.$membre->nom.'<br>';
+};
+
+
+$sql = 'SELECT * FROM membres LIMIT 1';
+$req = $db->query($sql);
+$data = $req->fetch(PDO::FETCH_OBJ);
+
+echo '<pre>';
+print_r($data);
+echo '</pre>';

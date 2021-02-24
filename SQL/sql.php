@@ -25,13 +25,24 @@ $id = 12;
 $prenom = 'Ted';
 $ville = 'New-York';
 
-$sql = "SELECT * FROM membres WHERE id = ? OR prenom = ? OR ville = ?";
+// $sql = "SELECT * FROM membres WHERE id = ? OR prenom = ? OR ville = ?";
+// $req = $db->prepare($sql);
+// $req->bindParam(1, $id);
+// $req->bindParam(2, $prenom);
+// $req->bindParam(3, $ville);
+// $req->execute();
+// $data = $req->fetchAll(PDO::FETCH_OBJ);
+// foreach($data as $value) {
+//     echo $value->prenom.' '.$value->nom.'<br>';
+// };
+
+
+$sql = "SELECT * FROM membres WHERE id = :id OR prenom = :prenom OR ville = :ville";
 $req = $db->prepare($sql);
-$req->bindParam(1, $id);
-$req->bindParam(2, $prenom);
-$req->bindParam(3, $ville);
+$req->bindParam('id', $id, PDO::PARAM_INT);
+$req->bindParam('prenom', $prenom, PDO::PARAM_STR);
+$req->bindParam('ville', $ville, PDO::PARAM_STR);
 $req->execute();
-$data = $req->fetchAll(PDO::FETCH_OBJ);
-foreach($data as $value) {
-    echo $value->prenom.' '.$value->nom.'<br>';
+while($data = $req->fetch(PDO::FETCH_OBJ)) {
+    echo $data->prenom.' '.$data->nom.'<br>';
 };

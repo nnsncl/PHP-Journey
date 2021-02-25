@@ -22,5 +22,7 @@
         defense_spe : <?php echo $data->defense_spe ?><br>
         vitesse : <?php echo $data->vitesse ?>
     </p>
+    <?php echo isset($evolution) ? $evolution : null ?>
+    <a href="./pokemon.php" >Retour à la liste</a>
 </body>
 </html>

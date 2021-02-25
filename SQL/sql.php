@@ -12,7 +12,6 @@ foreach($data as $membre) {
     echo $membre->prenom.' '.$membre->nom.'<br>';
 };
 
-
 $sql = 'SELECT * FROM membres LIMIT 1';
 $req = $db->query($sql);
 $data = $req->fetch(PDO::FETCH_OBJ);
@@ -35,8 +34,7 @@ $ville = 'New-York';
 // foreach($data as $value) {
 //     echo $value->prenom.' '.$value->nom.'<br>';
 // };
-
-
+ 
 $sql = "SELECT * FROM membres WHERE id = :id OR prenom = :prenom OR ville = :ville";
 $req = $db->prepare($sql);
 $req->bindParam('id', $id, PDO::PARAM_INT);

@@ -1,37 +1,25 @@
 <?php
 
-class Car
+class Car extends Vehicule
 {
     // Attributes
-    private $doorAmount = 3;
-    private $brand;
-    private $model;
-    private $color = 'Black';
+    const WHEELS_AMOUNT = 4;
+    // private $brand;
+    // private $model;
+    // private $color = 'Black';
 
     // Methods
-    public function start()
+    public function __construct(string $brand, string $model)
     {
-        echo "Car's starting";
-    }
-
-    public function getColor()
-    {
-        return $this->color;
-    }
-
-    public function setColor($color)
-    {
-        $this->color = $color;
+        $this->brand = $brand;
+        $this->model = $model;
     }
 }
 
+// $c = new Car('Lada', 'LadaOne');
+// $c->start();
 
-$car = new Car;
+// echo '<br>';
 
-$car->start();
-echo '<br>';
-echo $car->getColor();
-echo $car->setColor('Grey');
-echo '<br>';
-echo $car->getColor();
-echo '<br>';
+// $c2 = new Car('Blyat mobile', 'Lada');
+// $c2->start();

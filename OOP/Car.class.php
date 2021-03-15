@@ -11,6 +11,10 @@ class Car
     // Methods
     public function start()
     {
-        echo 'Car starting';
+        echo "Car's starting";
     }
 }
+
+
+$car = new Car;
+$car->start();

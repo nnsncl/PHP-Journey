@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/Battle.php';
+require_once __DIR__ .'/Battle.php';
 
 $battle = new Battle;
 
